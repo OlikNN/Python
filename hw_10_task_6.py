@@ -11,18 +11,21 @@ import locale
 
 text = ['сетевое программирование', 'сокет', 'декоратор']
 
+def_coding = locale.getpreferredencoding()
 
-with open('test_file.txt', 'w+') as f_n:
+print(f'Кодировка по умолчанию {def_coding}')
+
+with open('test_file.txt', 'w+', encoding='utf-8') as f_n:
     for i in text:
         f_n.write(i + '\n')
     f_n.seek(0)
 
 print(f_n)
 
-def_coding = locale.getpreferredencoding()
 
 
-with open('test_file.txt', 'r', encoding=def_coding) as f_n:
+
+with open('test_file.txt', 'r', encoding='utf-8') as f_n:
     for i in f_n:
         print(i)
 

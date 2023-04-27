@@ -15,7 +15,7 @@ for ping_now in ping_resurs:
     ping_process = subprocess.Popen(ping_now, stdout=subprocess.PIPE)
     i = 0
     for line in ping_process.stdout:
-        if i<2:
+        if i<3:
             code = chardet.detect(line)['encoding']
             print(f"кодировка ответа {code}")
             line = line.decode(code).encode('utf-8')
